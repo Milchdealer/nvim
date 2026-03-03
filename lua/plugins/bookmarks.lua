@@ -1,5 +1,6 @@
 return {
   "tomasky/bookmarks.nvim",
+  dependencies = { "kkharji/sqlite.lua" },
   event = "VimEnter",
   config = function()
     require("bookmarks").setup({

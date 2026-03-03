@@ -10,6 +10,23 @@ git clone git@github.com:Milchdealer/nvim.git ~/.config/nvim
 
 First launch auto-installs lazy.nvim and all plugins.
 
+## External Dependencies
+
+Install before first launch:
+
+```bash
+brew install fzf ripgrep fd coursier
+```
+
+| Tool | Purpose | Install |
+|---|---|---|
+| [fzf](https://github.com/junegunn/fzf) | Fuzzy finder backend for fzf-lua | `brew install fzf` |
+| [ripgrep](https://github.com/BurntSushi/ripgrep) | Live grep backend | `brew install ripgrep` |
+| [fd](https://github.com/sharkdp/fd) | File finder backend | `brew install fd` |
+| [coursier](https://get-coursier.io/) | Metals (Scala LSP) installer | `brew install coursier` |
+
+Mason auto-installs `jdtls`, `basedpyright`, `bashls`, and `ts_ls` on first launch. TreeSitter parsers are compiled automatically.
+
 ## Plugins
 
 | Plugin | Purpose |
@@ -29,6 +46,8 @@ First launch auto-installs lazy.nvim and all plugins.
 
 Installed via Mason: `jdtls` (Java), `basedpyright` (Python), `bashls` (Bash), `ts_ls` (TypeScript).
 Metals is configured separately for Scala/sbt.
+
+Server configs live in `lsp/` using the Neovim 0.11 `vim.lsp.enable()` API. Each file returns a table with `cmd`, `filetypes`, and `root_markers`.
 
 ## Keybindings
 

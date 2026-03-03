@@ -23,6 +23,7 @@ First launch auto-installs lazy.nvim and all plugins.
 | [barbecue.nvim](https://github.com/utilyre/barbecue.nvim) | Winbar breadcrumbs (file path + LSP symbols) |
 | [nvim-navic](https://github.com/SmiteshP/nvim-navic) | LSP symbol context for breadcrumbs |
 | [nvim-web-devicons](https://github.com/nvim-tree/nvim-web-devicons) | File icons |
+| [bookmarks.nvim](https://github.com/LintaoAmons/bookmarks.nvim) | Persistent line bookmarks with tree view |
 
 ## LSP Servers
 
@@ -49,6 +50,16 @@ Metals is configured separately for Scala/sbt.
 | `Space f g` | Live grep |
 | `Space f b` | Buffers |
 | `Space f r` | Recent files |
+
+### Bookmarks
+
+| Key | Action |
+|---|---|
+| `mm` | Toggle bookmark on current line |
+| `mo` | Open bookmarks tree |
+| `mn` | Jump to next bookmark |
+| `mp` | Jump to previous bookmark |
+| `ma` | All bookmark commands |
 
 ## Settings
 

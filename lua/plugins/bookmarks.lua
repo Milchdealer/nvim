@@ -1,15 +1,21 @@
 return {
-  "LintaoAmons/bookmarks.nvim",
-  tag = "3.2.0",
-  dependencies = {
-    "kkharji/sqlite.lua",
-  },
+  "tomasky/bookmarks.nvim",
+  event = "VimEnter",
   config = function()
-    require("bookmarks").setup({})
-    vim.keymap.set("n", "mm", "<cmd>BookmarksMark<cr>", { desc = "Toggle bookmark" })
-    vim.keymap.set("n", "mo", "<cmd>BookmarksTree<cr>", { desc = "Bookmarks tree" })
-    vim.keymap.set("n", "mn", "<cmd>BookmarksGotoNext<cr>", { desc = "Next bookmark" })
-    vim.keymap.set("n", "mp", "<cmd>BookmarksGotoPrev<cr>", { desc = "Previous bookmark" })
-    vim.keymap.set("n", "ma", "<cmd>BookmarksCommands<cr>", { desc = "Bookmark commands" })
+    require("bookmarks").setup({
+      save_file = vim.fn.expand("$HOME/.bookmarks"),
+      keywords = {
+        ["@t"] = "☑️ ",  -- Todo
+        ["@w"] = "⚠️ ",  -- Warn
+        ["@f"] = "⛏ ",  -- Fix
+        ["@n"] = "📓 ",  -- Note
+      },
+    })
+    vim.keymap.set("n", "mm", require("bookmarks").bookmark_toggle, { desc = "Toggle bookmark" })
+    vim.keymap.set("n", "mi", require("bookmarks").bookmark_ann, { desc = "Annotate bookmark" })
+    vim.keymap.set("n", "mn", require("bookmarks").bookmark_next, { desc = "Next bookmark" })
+    vim.keymap.set("n", "mp", require("bookmarks").bookmark_prev, { desc = "Previous bookmark" })
+    vim.keymap.set("n", "ml", require("bookmarks").bookmark_list, { desc = "List bookmarks (quickfix)" })
+    vim.keymap.set("n", "mc", require("bookmarks").bookmark_clean, { desc = "Clean bookmarks in buffer" })
   end,
 }

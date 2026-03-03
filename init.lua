@@ -36,6 +36,12 @@ vim.opt.mouse = "a"
 vim.opt.showmode = false
 vim.opt.wrap = false
 
+-- Auto-reload files changed externally (e.g. by Claude Code)
+vim.o.autoread = true
+vim.api.nvim_create_autocmd({ "FocusGained", "BufEnter" }, {
+  command = "checktime",
+})
+
 -- Clear search highlight with Esc
 vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>")
 

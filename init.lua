@@ -48,6 +48,10 @@ vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>")
 -- Alt+click to go to definition
 vim.keymap.set("n", "<A-LeftMouse>", "<LeftMouse><cmd>lua vim.lsp.buf.definition()<CR>")
 
+-- Mouse back/forward to navigate jump list
+vim.keymap.set("n", "<X1Mouse>", "<C-o>")
+vim.keymap.set("n", "<X2Mouse>", "<C-i>")
+
 -- Window navigation
 vim.keymap.set("n", "<C-h>", "<C-w>h")
 vim.keymap.set("n", "<C-j>", "<C-w>j")

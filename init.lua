@@ -73,7 +73,7 @@ vim.opt.rtp:prepend(lazypath)
 require("lazy").setup("plugins")
 
 local function apply_custom_highlights()
-  -- Bold orange keywords
+  -- Bold orange keywords (treesitter)
   vim.api.nvim_set_hl(0, "@keyword", { fg = "#FF9E3B", bold = true })
   vim.api.nvim_set_hl(0, "@keyword.modifier", { fg = "#FF9E3B", bold = true })
   vim.api.nvim_set_hl(0, "@keyword.type", { fg = "#FF9E3B", bold = true })
@@ -83,8 +83,13 @@ local function apply_custom_highlights()
   vim.api.nvim_set_hl(0, "@keyword.exception", { fg = "#FF9E3B", bold = true })
   vim.api.nvim_set_hl(0, "@keyword.import", { fg = "#FF9E3B", bold = true })
   vim.api.nvim_set_hl(0, "@type.builtin", { fg = "#FF9E3B", bold = true })
+  vim.api.nvim_set_hl(0, "@type.qualifier", { fg = "#FF9E3B", bold = true })
   vim.api.nvim_set_hl(0, "Keyword", { fg = "#FF9E3B", bold = true })
   vim.api.nvim_set_hl(0, "Statement", { fg = "#FF9E3B", bold = true })
+
+  -- Bold orange keywords (LSP semantic tokens — override jdtls)
+  vim.api.nvim_set_hl(0, "@lsp.type.modifier", { fg = "#FF9E3B", bold = true })
+  vim.api.nvim_set_hl(0, "@lsp.type.keyword", { fg = "#FF9E3B", bold = true })
 
   -- Single-line comments: grey / Multi-line comments: dark green
   vim.api.nvim_set_hl(0, "@comment", { fg = "#7A7A7A", italic = true })

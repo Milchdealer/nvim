@@ -58,10 +58,6 @@ vim.keymap.set("n", "<C-j>", "<C-w>j")
 vim.keymap.set("n", "<C-k>", "<C-w>k")
 vim.keymap.set("n", "<C-l>", "<C-w>l")
 
--- Toggle comment: current line (normal) or selection (visual) — Ctrl+/ (C-_ in terminal)
-vim.keymap.set("n", "<C-_>", "gcc", { remap = true, desc = "Toggle comment" })
-vim.keymap.set("v", "<C-_>", "gc", { remap = true, desc = "Toggle comment" })
-
 -- Bootstrap lazy.nvim
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not (vim.uv or vim.loop).fs_stat(lazypath) then
@@ -76,21 +72,29 @@ vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup("plugins")
 
--- Bold orange keywords
-vim.api.nvim_set_hl(0, "@keyword", { fg = "#FF9E3B", bold = true })
-vim.api.nvim_set_hl(0, "@keyword.modifier", { fg = "#FF9E3B", bold = true })
-vim.api.nvim_set_hl(0, "@keyword.type", { fg = "#FF9E3B", bold = true })
-vim.api.nvim_set_hl(0, "@keyword.return", { fg = "#FF9E3B", bold = true })
-vim.api.nvim_set_hl(0, "@keyword.conditional", { fg = "#FF9E3B", bold = true })
-vim.api.nvim_set_hl(0, "@keyword.repeat", { fg = "#FF9E3B", bold = true })
-vim.api.nvim_set_hl(0, "@keyword.exception", { fg = "#FF9E3B", bold = true })
-vim.api.nvim_set_hl(0, "@keyword.import", { fg = "#FF9E3B", bold = true })
-vim.api.nvim_set_hl(0, "@type.builtin", { fg = "#FF9E3B", bold = true })
-vim.api.nvim_set_hl(0, "Keyword", { fg = "#FF9E3B", bold = true })
-vim.api.nvim_set_hl(0, "Statement", { fg = "#FF9E3B", bold = true })
+local function apply_custom_highlights()
+  -- Bold orange keywords
+  vim.api.nvim_set_hl(0, "@keyword", { fg = "#FF9E3B", bold = true })
+  vim.api.nvim_set_hl(0, "@keyword.modifier", { fg = "#FF9E3B", bold = true })
+  vim.api.nvim_set_hl(0, "@keyword.type", { fg = "#FF9E3B", bold = true })
+  vim.api.nvim_set_hl(0, "@keyword.return", { fg = "#FF9E3B", bold = true })
+  vim.api.nvim_set_hl(0, "@keyword.conditional", { fg = "#FF9E3B", bold = true })
+  vim.api.nvim_set_hl(0, "@keyword.repeat", { fg = "#FF9E3B", bold = true })
+  vim.api.nvim_set_hl(0, "@keyword.exception", { fg = "#FF9E3B", bold = true })
+  vim.api.nvim_set_hl(0, "@keyword.import", { fg = "#FF9E3B", bold = true })
+  vim.api.nvim_set_hl(0, "@type.builtin", { fg = "#FF9E3B", bold = true })
+  vim.api.nvim_set_hl(0, "Keyword", { fg = "#FF9E3B", bold = true })
+  vim.api.nvim_set_hl(0, "Statement", { fg = "#FF9E3B", bold = true })
 
--- Single-line comments: grey / Multi-line comments: dark green
-vim.api.nvim_set_hl(0, "@comment", { fg = "#7A7A7A", italic = true })
-vim.api.nvim_set_hl(0, "Comment", { fg = "#7A7A7A", italic = true })
-vim.api.nvim_set_hl(0, "@comment.block", { fg = "#2E7D32", italic = true })
-vim.api.nvim_set_hl(0, "@comment.documentation", { fg = "#2E7D32", italic = true })
+  -- Single-line comments: grey / Multi-line comments: dark green
+  vim.api.nvim_set_hl(0, "@comment", { fg = "#7A7A7A", italic = true })
+  vim.api.nvim_set_hl(0, "Comment", { fg = "#7A7A7A", italic = true })
+  vim.api.nvim_set_hl(0, "@comment.block", { fg = "#2E7D32", italic = true })
+  vim.api.nvim_set_hl(0, "@comment.documentation", { fg = "#2E7D32", italic = true })
+end
+
+vim.api.nvim_create_autocmd({ "ColorScheme", "VimEnter" }, {
+  group = vim.api.nvim_create_augroup("CustomHighlights", { clear = true }),
+  callback = apply_custom_highlights,
+})
+apply_custom_highlights()

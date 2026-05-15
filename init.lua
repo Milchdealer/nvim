@@ -87,7 +87,10 @@ local function apply_custom_highlights()
   vim.api.nvim_set_hl(0, "Keyword", { fg = "#FF9E3B", bold = true })
   vim.api.nvim_set_hl(0, "Statement", { fg = "#FF9E3B", bold = true })
 
-  -- Bold orange keywords (LSP semantic tokens — override jdtls)
+  -- Legacy Vim keyword groups
+  vim.api.nvim_set_hl(0, "PreProc", { fg = "#FF9E3B", bold = true })
+
+  -- Bold orange keywords (LSP semantic tokens)
   vim.api.nvim_set_hl(0, "@lsp.type.modifier", { fg = "#FF9E3B", bold = true })
   vim.api.nvim_set_hl(0, "@lsp.type.keyword", { fg = "#FF9E3B", bold = true })
 

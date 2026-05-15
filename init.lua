@@ -75,3 +75,22 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup("plugins")
+
+-- Bold orange keywords
+vim.api.nvim_set_hl(0, "@keyword", { fg = "#FF9E3B", bold = true })
+vim.api.nvim_set_hl(0, "@keyword.modifier", { fg = "#FF9E3B", bold = true })
+vim.api.nvim_set_hl(0, "@keyword.type", { fg = "#FF9E3B", bold = true })
+vim.api.nvim_set_hl(0, "@keyword.return", { fg = "#FF9E3B", bold = true })
+vim.api.nvim_set_hl(0, "@keyword.conditional", { fg = "#FF9E3B", bold = true })
+vim.api.nvim_set_hl(0, "@keyword.repeat", { fg = "#FF9E3B", bold = true })
+vim.api.nvim_set_hl(0, "@keyword.exception", { fg = "#FF9E3B", bold = true })
+vim.api.nvim_set_hl(0, "@keyword.import", { fg = "#FF9E3B", bold = true })
+vim.api.nvim_set_hl(0, "@type.builtin", { fg = "#FF9E3B", bold = true })
+vim.api.nvim_set_hl(0, "Keyword", { fg = "#FF9E3B", bold = true })
+vim.api.nvim_set_hl(0, "Statement", { fg = "#FF9E3B", bold = true })
+
+-- Single-line comments: grey / Multi-line comments: dark green
+vim.api.nvim_set_hl(0, "@comment", { fg = "#7A7A7A", italic = true })
+vim.api.nvim_set_hl(0, "Comment", { fg = "#7A7A7A", italic = true })
+vim.api.nvim_set_hl(0, "@comment.block", { fg = "#2E7D32", italic = true })
+vim.api.nvim_set_hl(0, "@comment.documentation", { fg = "#2E7D32", italic = true })

@@ -83,6 +83,8 @@ Server configs live in `lsp/` using the Neovim 0.11 `vim.lsp.enable()` API. Each
 
 ## Settings
 
+- Bold orange keywords (`#FF9E3B`)
+- Grey single-line comments, dark green multi-line/block comments
 - 4-space indentation, smart indent
 - Relative line numbers
 - Case-insensitive search (smart case)

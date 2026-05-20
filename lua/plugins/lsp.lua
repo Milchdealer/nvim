@@ -15,6 +15,8 @@ return {
         "basedpyright",
         "bashls",
         "ts_ls",
+        "rust_analyzer",
+        "zls",
       },
     },
   },
@@ -36,6 +38,8 @@ return {
         "basedpyright",
         "bashls",
         "ts_ls",
+        "rust_analyzer",
+        "zls",
       })
     end,
   },

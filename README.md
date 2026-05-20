@@ -25,7 +25,7 @@ brew install fzf ripgrep fd coursier
 | [fd](https://github.com/sharkdp/fd) | File finder backend | `brew install fd` |
 | [coursier](https://get-coursier.io/) | Metals (Scala LSP) installer | `brew install coursier` |
 
-Mason auto-installs `jdtls`, `basedpyright`, `bashls`, and `ts_ls` on first launch. TreeSitter parsers are compiled automatically.
+Mason auto-installs `jdtls`, `basedpyright`, `bashls`, `ts_ls`, `rust_analyzer`, and `zls` on first launch. TreeSitter parsers are compiled automatically.
 
 ## Plugins
 
@@ -44,7 +44,7 @@ Mason auto-installs `jdtls`, `basedpyright`, `bashls`, and `ts_ls` on first laun
 
 ## LSP Servers
 
-Installed via Mason: `jdtls` (Java), `basedpyright` (Python), `bashls` (Bash), `ts_ls` (TypeScript).
+Installed via Mason: `jdtls` (Java), `basedpyright` (Python), `bashls` (Bash), `ts_ls` (TypeScript), `rust_analyzer` (Rust), `zls` (Zig).
 Metals is configured separately for Scala/sbt.
 
 Server configs live in `lsp/` using the Neovim 0.11 `vim.lsp.enable()` API. Each file returns a table with `cmd`, `filetypes`, and `root_markers`.

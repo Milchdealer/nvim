@@ -36,10 +36,10 @@ vim.opt.clipboard = "unnamedplus"
 vim.opt.undofile = true
 vim.opt.updatetime = 250
 vim.opt.mouse = "a"
-vim.opt.showmode = false
+vim.opt.showmode = true
 vim.opt.wrap = false
 
--- Auto-reload files changed externally (e.g. by Claude Code)
+-- Auto-reload files changed externally
 vim.o.autoread = true
 vim.api.nvim_create_autocmd({ "FocusGained", "BufEnter" }, {
   command = "checktime",
@@ -47,6 +47,10 @@ vim.api.nvim_create_autocmd({ "FocusGained", "BufEnter" }, {
 
 -- Clear search highlight with Esc
 vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>")
+
+-- Toggle comment (Ctrl+Shift+7 / Ctrl+/)
+vim.keymap.set("n", "<C-_>", "gcc", { remap = true })
+vim.keymap.set("v", "<C-_>", "gc", { remap = true })
 
 -- Alt+click to go to definition
 vim.keymap.set("n", "<A-LeftMouse>", "<LeftMouse><cmd>lua vim.lsp.buf.definition()<CR>")

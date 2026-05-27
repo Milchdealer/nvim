@@ -11,6 +11,7 @@ return {
     },
     opts = {
       ensure_installed = {
+        "clangd",
         "jdtls",
         "pyright",
         "bashls",
@@ -34,6 +35,7 @@ return {
         end,
       })
       vim.lsp.enable({
+        "clangd",
         "jdtls",
         "pyright",
         "bashls",

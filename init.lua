@@ -1,3 +1,6 @@
+-- Ensure mise-installed tools are on PATH for Mason/LSP
+vim.env.PATH = vim.fn.expand("~/.local/share/mise/shims") .. ":" .. vim.env.PATH
+
 -- Leader key
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "

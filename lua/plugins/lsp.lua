@@ -12,7 +12,7 @@ return {
     opts = {
       ensure_installed = {
         "jdtls",
-        "basedpyright",
+        "pyright",
         "bashls",
         "ts_ls",
         "rust_analyzer",
@@ -35,7 +35,7 @@ return {
       })
       vim.lsp.enable({
         "jdtls",
-        "basedpyright",
+        "pyright",
         "bashls",
         "ts_ls",
         "rust_analyzer",

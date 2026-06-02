@@ -2,7 +2,13 @@ return {
   "saghen/blink.cmp",
   version = "*",
   opts = {
-    keymap = { preset = "default" },
+    keymap = {
+      preset = "default",
+      ["<C-Space>"] = {},
+      ["<C-y>"] = { "show", "show_documentation", "hide_documentation" },
+      ["<Tab>"] = { "accept", "fallback" },
+      ["<CR>"] = { "fallback" },
+    },
     appearance = {
       nerd_font_variant = "mono",
     },

@@ -56,10 +56,10 @@ Server configs live in `lsp/` using the Neovim 0.11 `vim.lsp.enable()` API. Each
 
 | Key | Action |
 |---|---|
-| `Ctrl+Space` | Trigger completion manually |
+| `Ctrl+y` | Trigger completion manually |
 | `Ctrl+n` / `Ctrl+p` | Next / previous item |
 | `Ctrl+e` | Cancel completion |
-| `Enter` | Accept selected item |
+| `Tab` | Accept selected item |
 
 ### General
 

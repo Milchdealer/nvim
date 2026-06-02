@@ -113,3 +113,11 @@ vim.api.nvim_create_autocmd({ "ColorScheme", "VimEnter" }, {
   callback = apply_custom_highlights,
 })
 apply_custom_highlights()
+
+-- Language-specific build commands
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = "zig",
+  callback = function()
+    vim.opt_local.makeprg = "zig build"
+  end,
+})

@@ -41,6 +41,7 @@ Mason auto-installs `jdtls`, `basedpyright`, `bashls`, `ts_ls`, `rust_analyzer`,
 | [nvim-navic](https://github.com/SmiteshP/nvim-navic) | LSP symbol context for breadcrumbs |
 | [nvim-web-devicons](https://github.com/nvim-tree/nvim-web-devicons) | File icons |
 | [bookmarks.nvim](https://github.com/tomasky/bookmarks.nvim) | Persistent line bookmarks with annotations |
+| [blink.cmp](https://github.com/saghen/blink.cmp) | LSP-powered autocompletion |
 
 ## LSP Servers
 
@@ -50,6 +51,15 @@ Metals is configured separately for Scala/sbt.
 Server configs live in `lsp/` using the Neovim 0.11 `vim.lsp.enable()` API. Each file returns a table with `cmd`, `filetypes`, and `root_markers`.
 
 ## Keybindings
+
+### Completion (blink.cmp)
+
+| Key | Action |
+|---|---|
+| `Ctrl+Space` | Trigger completion manually |
+| `Ctrl+n` / `Ctrl+p` | Next / previous item |
+| `Ctrl+e` | Cancel completion |
+| `Enter` | Accept selected item |
 
 ### General
 

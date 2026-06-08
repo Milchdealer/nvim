@@ -97,6 +97,13 @@ local function apply_custom_highlights()
   -- Legacy Vim keyword groups
   vim.api.nvim_set_hl(0, "PreProc", { fg = "#FF9E3B", bold = true })
 
+  -- Base Vim type groups (used by legacy syntax and as treesitter fallbacks)
+  vim.api.nvim_set_hl(0, "Type", { fg = "#FF9E3B", bold = true })
+  vim.api.nvim_set_hl(0, "@type", { fg = "#FF9E3B", bold = true })
+  vim.api.nvim_set_hl(0, "StorageClass", { fg = "#FF9E3B", bold = true })
+  vim.api.nvim_set_hl(0, "Structure", { fg = "#FF9E3B", bold = true })
+  vim.api.nvim_set_hl(0, "Typedef", { fg = "#FF9E3B", bold = true })
+
   -- Bold orange keywords (LSP semantic tokens)
   vim.api.nvim_set_hl(0, "@lsp.type.modifier", { fg = "#FF9E3B", bold = true })
   vim.api.nvim_set_hl(0, "@lsp.type.keyword", { fg = "#FF9E3B", bold = true })

@@ -42,6 +42,7 @@ return {
         "ts_ls",
         "rust_analyzer",
         "zls",
+        "omnisharp",
       })
     end,
   },

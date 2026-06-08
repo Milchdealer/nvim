@@ -97,6 +97,14 @@ local function apply_custom_highlights()
   -- Legacy Vim keyword groups
   vim.api.nvim_set_hl(0, "PreProc", { fg = "#FF9E3B", bold = true })
 
+  -- Class names: bold but default color (not orange)
+  -- Explicit fg needed to override treesitter @type (orange) bleeding through LSP layer
+  local normal_fg = vim.api.nvim_get_hl(0, { name = "Normal" }).fg
+  local class_hl = { bold = true, fg = normal_fg or "NONE" }
+  vim.api.nvim_set_hl(0, "@lsp.type.class", class_hl)
+  vim.api.nvim_set_hl(0, "@lsp.type.class.cs", class_hl)
+  vim.api.nvim_set_hl(0, "csClassType", class_hl)
+
   -- Base Vim type groups (used by legacy syntax and as treesitter fallbacks)
   vim.api.nvim_set_hl(0, "Type", { fg = "#FF9E3B", bold = true })
   vim.api.nvim_set_hl(0, "@type", { fg = "#FF9E3B", bold = true })
